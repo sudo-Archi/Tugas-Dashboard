@@ -1,0 +1,285 @@
+:root {
+  --latar1: #0909097a;
+  --latar2: linear-gradient(#9b0428, #6c0820, #f2aebc);
+  --text1: #fff0f3;
+  --text2: #8e8889;
+  --border: #fffdfd76;
+  --select: #ffffff45;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: var(--text1);
+}
+
+body {
+  background: var(--latar2);
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 25px;
+
+  background: var(--latar1);
+  border-right: 1px solid var(--border);
+}
+
+.sidebar-head {
+  margin-bottom: 50px;
+  font-size: 18px;
+}
+
+.sidebar-main {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sidebar-main a {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding-left: 10px;
+
+  background: none;
+  border: none;
+  border-radius: 15px;
+  color: var(--text1);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.sidebar-main a:hover {
+  background-color: var(--select);
+  box-shadow: 0 0 5px var(--select);
+}
+
+/* Dashboard */
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  font-size: 20px;
+  padding: 20px;
+}
+
+.header {padding-bottom: 30px;}
+
+.status {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  background: var(--latar1);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px var(--select);
+}
+
+.label {
+  font-size: 15px;
+  color: var(--text2);
+}
+
+.angka {font-size: 35px;}
+
+.trend {font-size: 13px;}
+
+.content-body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.content-tabel {
+  grid-column: span 2;
+  padding: 20px;
+  border-radius: 20px;
+
+  background: var(--latar1);
+  border: 1px solid var(--border);
+}
+
+.content-tabel:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px var(--select);
+}
+
+.tabel-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tabel-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 200px;
+  gap: 10px;
+}
+
+.tabel {
+  flex: 1;
+  border-radius: 6px 6px 0 0;
+  display: flex;
+  justify-content: center;
+  color: black;
+  background: linear-gradient(white, #f2aebc);
+}
+
+.content-status {
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  background: var(--latar1);
+  border: 1px solid var(--border);
+}
+
+.content-status:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px var(--select);
+}
+
+.content-status ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 20px;
+
+  font-size: medium;
+}
+
+@media (max-width: 900px) {
+  .content-body { grid-template-columns: 1fr; }
+  .content-tabel { grid-column: span 1; }
+}
+
+@media (max-width: 640px) {
+  body { flex-direction: column; }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+  }
+  .sidebar-main {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .sidebar-main a {
+    flex: 1 1 40%;
+    justify-content: center;
+    padding-left: 0;
+  }
+}
+
+/* Produk */
+.produk-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.produk-card {
+  background: var(--latar1);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.produk-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px var(--select);
+  border-color: var(--text1);
+}
+
+.produk-card .kategori {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text2);
+  margin-bottom: 8px;
+}
+
+.produk-card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: var(--text1);
+}
+
+.produk-card .harga {
+  font-size: 16px;
+  font-weight: bold;
+  color: #6dff9e;
+  margin-bottom: 20px;
+}
+
+.produk-card .stok {
+  font-size: 13px;
+  color: var(--text2);
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px dashed var(--border);
+}
+
+/* Pesanan */
+.tabel-pesanan {
+  background: var(--latar1);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  color: var(--text2);
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.badge.ok   { background: #6dff9e33; color: #6dff9e; }
+.badge.warn { background: #ffd16633; color: #ffd166; }
+.badge.err  { background: #ff7a7a33; color: #ff7a7a; }
